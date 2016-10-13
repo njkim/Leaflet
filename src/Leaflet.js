@@ -45,6 +45,11 @@ export {PosAnimation} from './dom/PosAnimation';
 import * as DomEvent from './dom/DomEvent';
 export {DomEvent};
 
+import * as DomUtil from './dom/DomUtil';
+export {DomUtil};
+
+export {Draggable} from './dom/Draggable';
+
 // geometry
 
 export {Point, toPoint as point} from './geometry/Point';
@@ -89,8 +94,40 @@ export {ImageOverlay, imageOverlay} from './layer/ImageOverlay';
 export {Popup, popup} from './layer/Popup';
 export {Tooltip, tooltip} from './layer/Tooltip';
 
+import {Icon} from './layer/marker/Icon';
+export {icon} from './layer/marker/Icon';
+import {IconDefault} from './layer/marker/Icon.Default';
+Icon.Default = IconDefault;
+export {Icon};
+
+export {DivIcon, divIcon} from './layer/marker/DivIcon';
+export {Marker, marker} from './layer/marker/Marker';
+
+export {GridLayer, gridLayer} from './layer/tile/GridLayer';
+import {TileLayer, tileLayer} from './layer/tile/TileLayer';
+import {TileLayerWMS, tileLayerWMS} from './layer/tile/TileLayer.WMS';
+TileLayer.WMS = TileLayerWMS;
+tileLayer.wms = tileLayerWMS;
+export {TileLayer, tileLayer};
+
+
 // map
 
+import {Map} from './map/Map';
+import {BoxZoom} from './map/handler/Map.BoxZoom';
+Map.BoxZoom = BoxZoom;
+import {DoubleClickZoom} from './map/handler/Map.DoubleClickZoom';
+Map.DoubleClickZoom = DoubleClickZoom;
+import {Drag} from './map/handler/Map.Drag';
+Map.Drag = Drag;
+import {Keyboard} from './map/handler/Map.Keyboard';
+Map.Keyboard = Keyboard;
+import {ScrollWheelZoom} from './map/handler/Map.ScrollWheelZoom';
+Map.ScrollWheelZoom = ScrollWheelZoom;
+import {Tap} from './map/handler/Map.Tap';
+Map.Tap = Tap;
+import {TouchZoom} from './map/handler/Map.TouchZoom';
+Map.TouchZoom = TouchZoom;
 export {Map, createMap as map} from './map/Map';
 
 // misc
