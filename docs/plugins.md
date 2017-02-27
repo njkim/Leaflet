@@ -346,21 +346,24 @@ Sometimes you don't want to load a map, just big custom images. **Really** big o
 	</tr>
 	<tr>
 		<td>
-			<a href="https://github.com/IvanSanchez/Leaflet.MandelbrotGL">Leaflet.MandelbrotGL</a>
-		</td><td>
-			Renders the <a href="https://en.wikipedia.org/wiki/Mandelbrot_set">Mandelbrot set</a> using WebGL (<a href="https://ivansanchez.github.io/Leaflet.MandelbrotGL/demo.html">demo</a>).
-		</td><td>
-			<a href="https://github.com/IvanSanchez">Iván Sánchez</a>
-		</td>
-	</tr>
-	<tr>
-		<td>
 			<a href="https://github.com/aparshin/leaflet-fractal">leaflet-fractal</a>
 		</td><td>
 			Renders some fractals (Mandelbrot set, Julia set and some others) using 2D canvas (<a href="http://aparshin.github.io/leaflet-fractal/">demo</a>).
 		</td><td>
 			<a href="https://github.com/aparshin">Alexander Parshin</a>
 		</td>
+	</tr>
+	<tr>
+	  <td>
+	    <a href="https://github.com/commenthol/leaflet-rastercoords">leaflet-rastercoords</a>
+	  </td><td>
+	    Renders large tiled images generated with
+	    <a href="http://github.com/commenthol/gdal2tiles-leaflet">gdal2tiles-leaflet</a>.
+	    Image raster coordinates can be used to set markers, etc.
+	    (<a href="http://commenthol.github.io/leaflet-rastercoords">demo</a>).
+	  </td><td>
+	    <a href="https://github.com/commenthol">Commenthol</a>
+	  </td>
 	</tr>
 </table>
 
@@ -452,6 +455,15 @@ The following plugins change the way that tile or image layers are displayed in 
 			A Leaflet control to add a split screen to compare two map overlays (<a href="http://lab.digital-democracy.org/leaflet-side-by-side/">demo</a>).
 		</td><td>
 			<a href="http://www.digital-democracy.org">Digital Democracy</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://gitlab.com/IvanSanchez/Leaflet.TileLayer.GL">Leaflet.TileLayer.GL</a>
+		</td><td>
+			Applies custom WebGL shaders to each tile in a tilelayer. Demos: <a href="http://ivansanchez.gitlab.io/Leaflet.TileLayer.GL/demo/demo-mandelbrot.html">Mandelbrot set</a>, <a href="http://ivansanchez.gitlab.io/Leaflet.TileLayer.GL/demo/demo-antitoner.html">manipulate tile colours</a>, <a href="http://ivansanchez.gitlab.io/Leaflet.TileLayer.GL/demo/demo-floow.html">elevation with terrain-RBG tiles</a>.
+		</td><td>
+			<a href="https://github.com/IvanSanchez">Iván Sánchez</a>
 		</td>
 	</tr>
 </table>
@@ -1245,6 +1257,17 @@ These plugins provide new markers or news ways of converting abstract data into 
 		</td>
 		<td>
 			<a href="https://github.com/mikhailshilkov">Mikhail Shilkov</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://github.com/yakitoritabetai/Leaflet.LabelTextCollision">Leaflet.LabelTextCollision</a>
+		</td>
+		<td>
+			Displays labels on paths (polylines, polygons, circles) avoiding label collision. (<a href="https://yakitoritabetai.github.io/Leaflet.LabelTextCollision/">demo</a>).
+		</td>
+		<td>
+			<a href="https://github.com/yakitoritabetai">Kenta Hakoishi</a>
 		</td>
 	</tr>
 </table>

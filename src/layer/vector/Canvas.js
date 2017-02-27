@@ -35,8 +35,6 @@ L.Canvas = L.Renderer.extend({
 	onAdd: function () {
 		L.Renderer.prototype.onAdd.call(this);
 
-		this._layers = this._layers || {};
-
 		// Redraw vectors since canvas is cleared upon removal,
 		// in case of removing the renderer itself from the map.
 		this._draw();
@@ -89,7 +87,9 @@ L.Canvas = L.Renderer.extend({
 		this._layers[L.stamp(layer)] = layer;
 	},
 
-	_addPath: L.Util.falseFn,
+	_addPath: function (layer) {
+		layer._removed = false;
+	},
 
 	_removePath: function (layer) {
 		layer._removed = true;
@@ -229,7 +229,7 @@ L.Canvas = L.Renderer.extend({
 
 		ctx.globalCompositeOperation = clear ? 'destination-out' : 'source-over';
 
-		if (options.fill) {
+		if (options.fill || clear) {
 			ctx.globalAlpha = clear ? 1 : options.fillOpacity;
 			ctx.fillStyle = options.fillColor || options.color;
 			ctx.fill(options.fillRule || 'evenodd');
@@ -286,15 +286,19 @@ L.Canvas = L.Renderer.extend({
 	},
 
 	_handleMouseHover: function (e, point) {
-		var id, layer;
+		var id, layer, candidateHoveredLayer;
 
 		for (id in this._drawnLayers) {
 			layer = this._drawnLayers[id];
 			if (layer.options.interactive && layer._containsPoint(point)) {
-				L.DomUtil.addClass(this._container, 'leaflet-interactive'); // change cursor
-				this._fireEvent([layer], e, 'mouseover');
-				this._hoveredLayer = layer;
+				candidateHoveredLayer = layer;
 			}
+		}
+
+		if (candidateHoveredLayer && candidateHoveredLayer !== this._hoveredLayer) {
+			L.DomUtil.addClass(this._container, 'leaflet-interactive'); // change cursor
+			this._fireEvent([candidateHoveredLayer], e, 'mouseover');
+			this._hoveredLayer = candidateHoveredLayer;
 		}
 
 		if (this._hoveredLayer) {
